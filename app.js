@@ -21,8 +21,10 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb+srv://teddyUser:Teddyisthebest@cluster0-yzopi.mongodb.net/test?retryWrites=true&w=majority", {
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v11D"
+mongoose.connect(url);
+
+// mongoose.connect("mongodb+srv://<user>:<pw>@cluster0-yzopi.mongodb.net/test?retryWrites=true&w=majority", {
 // 	useNewUrlParser: true,
 // 	useCreateIndex: true,
 // }).then(() => {
